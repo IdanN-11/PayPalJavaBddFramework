@@ -1,0 +1,6 @@
+2026-01-18 14:17:50,038 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AALK_u60peg0Zxi_-3vMRrvBzr6MajiHD5YV743FLfHTQxSDyFteUuibbqj5JhGT5b87s-RM7_OPECR3qoVU8ZhodhoPqA
+2026-01-18 14:17:58,564 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 14:17:58,628 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 14:18:32,292 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AALK_u60peg0Zxi_-3vMRrvBzr6MajiHD5YV743FLfHTQxSDyFteUuibbqj5JhGT5b87s-RM7_OPECR3qoVU8ZhodhoPqA
+2026-01-18 14:18:35,490 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 14:18:35,514 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
