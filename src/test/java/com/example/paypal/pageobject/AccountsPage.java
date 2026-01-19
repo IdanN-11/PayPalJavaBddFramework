@@ -12,7 +12,7 @@ public class AccountsPage extends BrowserBasePage {
         super(driver);
     }
 
-    // ================= PAGE LOAD =================
+    // ================= PAGE LOAD METHODS=================
 
     public void waitForAccountsPage() {
         waitForPresence(AccountsPageOR.payWithHeader);
