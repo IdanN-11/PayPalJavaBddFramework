@@ -4,3 +4,69 @@
 2026-01-18 14:18:32,292 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AALK_u60peg0Zxi_-3vMRrvBzr6MajiHD5YV743FLfHTQxSDyFteUuibbqj5JhGT5b87s-RM7_OPECR3qoVU8ZhodhoPqA
 2026-01-18 14:18:35,490 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
 2026-01-18 14:18:35,514 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 22:59:28,855 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 22:59:32,968 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 22:59:34,268 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 22:59:36,076 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 22:59:37,792 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:02:54,772 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:02:59,346 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:03:01,473 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:03:03,977 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:04:25,492 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:04:29,190 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:04:31,418 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:04:33,772 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:20,034 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:23,902 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:26,087 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:28,147 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:30,226 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:11:32,572 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:12:06,580 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:12:10,966 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:12:13,312 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:12:15,531 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:13:16,737 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:13:21,716 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:18:28,745 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:18:35,426 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:18:35,498 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:18:58,235 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:18:59,957 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:22:19,825 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:22:25,133 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:22:25,186 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:22:48,395 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:22:50,787 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAJZf1BprAVR5jIhLXJ5JLl_0-kTFKl5GqaauD-MmodBuJSzZ83cIjlEARgXeWxsVKuSPaXkUd0fBABLdzVUs075FP51vA
+2026-01-18 23:32:30,498 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:32:35,669 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:32:35,730 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:32:57,371 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:32:59,499 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:33:01,614 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:35:53,382 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:35:58,375 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:35:58,429 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:36:22,996 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:36:24,757 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:39:15,834 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:39:20,666 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:39:20,721 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:39:45,706 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:39:47,436 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:42:25,094 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:42:30,102 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:42:30,173 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:42:54,294 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:42:56,629 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:44:43,998 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:44:49,369 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:44:49,507 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:45:15,687 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:46:52,370 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:46:57,222 INFO  io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 143.0.7499.192 (resolved driver for Chrome 143)
+2026-01-18 23:46:57,276 INFO  io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\idann\.cache\selenium\chromedriver\win64\143.0.7499.192\chromedriver.exe
+2026-01-18 23:47:22,486 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:47:24,956 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A
+2026-01-18 23:47:27,288 INFO  com.example.paypal.steps.ApiSteps - Token  : A21AAL0doUiqD4ppqdohgMTjPFsf_MYqyu_48HpRzFIaka7YU2lJYNiy0yi2j3fjmOJbzLG2YnGBcpfZZJTB8sKgOvaDXL65A

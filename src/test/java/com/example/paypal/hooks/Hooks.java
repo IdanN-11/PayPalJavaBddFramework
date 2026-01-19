@@ -17,7 +17,7 @@ public class Hooks {
 
     private static List<Map<String,String>> allData;
     public static TestContext testContext= new TestContext();
-    public static RestHelper resrtHelper= new RestHelper();
+    public static RestHelper restHelper= new RestHelper();
     
 
     @BeforeAll

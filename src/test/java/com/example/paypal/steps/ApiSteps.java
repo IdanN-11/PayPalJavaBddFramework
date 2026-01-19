@@ -15,7 +15,6 @@ import com.example.paypal.pageobject.LoginPage;
 import com.example.paypal.util.DriverFactory;
 import com.example.paypal.util.InvoiceIdGenerator;
 import com.example.paypal.util.JwtGeneratorRS256;
-import com.example.paypal.util.OAuthTokenProvider;
 import com.example.paypal.util.ResponseHandler;
 import com.example.paypal.util.RestHelper;
 import com.example.paypal.util.TestContext;
@@ -25,22 +24,24 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 public class ApiSteps {
 	private static final Logger log =
 	        LoggerFactory.getLogger(ApiSteps.class);
-	private RestHelper resrtHelper =Hooks.resrtHelper;
+	private RestHelper restHelper =Hooks.restHelper;
 	private TestContext testContext = Hooks.testContext ;
 	
 
 
     
 
-    @Given("I have a valid PayPal access token")
+    @Given("TPP have a valid PayPal access token")
     public void token() {
         System.out.println("GGGGGGGGG.");
         
-        String token = OAuthTokenProvider.getToken();
+        String token = restHelper.PostCCToken();
         System.out.println(token);
         testContext.setToken(token);
         
@@ -49,7 +50,7 @@ public class ApiSteps {
         
     }
 
-    @When("I create a checkout order using data from excel {string}")
+    @When("TPP create a checkout order using data from excel for {string}")
     public void createOrder(String TestId) {
     	String path = System.getProperty("user.dir")+"/src/test/resources/paypal_multi_order_with_items.xlsx";
     	ObjectMapperPayload obm=new ObjectMapperPayload();
@@ -65,21 +66,44 @@ public class ApiSteps {
     	Headers.put("Content-Type", "application/json");
     	System.out.println(token);
     	
-    	Response res = resrtHelper.postMessage(body, Headers,fullUrl);
+    	Response res = restHelper.postMessage(body, Headers);
     	ResponseHandler responseHandler = new ResponseHandler(res);
     	String orderId = res.jsonPath().get("id");
     	testContext.setorderId(orderId);
+    	testContext.setcreateOrderResponse(res);
     	String rel = "payer-action";
     	testContext.setredirectUrl(responseHandler.getRedirectUrlByRel(rel));
     	System.out.println(responseHandler.getRedirectUrlByRel(rel));
     	
     }
+    
+    @Then("TPP check order is succesfully created with {string}")
+    public void checkCreateOrderStatus(String createOrderStatusCode) {
+         Response res = testContext.getcreateOrderResponse();
+         String statusCode = String.valueOf(res.getStatusCode());
+         assertEquals(statusCode,createOrderStatusCode);
+    }
+    
+
+//    @Then(" TPP update the order with {string} details")
+//    public void updateOrder(String updatePayload) {
+//    
+//    }
+    
      
-    @And("I confirm a checkout order {string}")
-    public void confirmOrder(String orderId) {
+//    @And("TPP confirm the order is update with update order resopnse code {string}")
+//    public void checkUpdateOrderStatus(String updateOrderstatusCode) {
+//    	 Response res = testContext.getupdateOrderResponse();
+//         int statusCode = res.getStatusCode();
+//         assertEquals(statusCode,updateOrderstatusCode);
+//    }
+    
+    @And("TPP confirm the checkout order and response code should be {string} and {string}")
+    public void confirmOrder(String confirmOrderStatusCode , String payload) {
     	String path = System.getProperty("user.dir")+"/src/test/resources/paypal_multi_order_with_items.xlsx";
     	ObjectMapperPayload obm=new ObjectMapperPayload();
-    	String body = obm.CreatePayload(path,orderId);
+    	String orderId=testContext.getorderId();
+    	String body = obm.CreatePayload(path,payload);
 
     	
     	String fullUrl = System.getProperty("paypal.base.url")+System.getProperty("paypal.createO.url")+"/"+testContext.getorderId()+"/confirm-payment-source";
@@ -89,7 +113,8 @@ public class ApiSteps {
     	Headers.put("Content-Type", "application/json");
     	System.out.println(token);
     	
-    	resrtHelper.postMessage(body,Headers,fullUrl);
+    	Response res = restHelper.postMessage(body,Headers);
+    	assertEquals(confirmOrderStatusCode,String.valueOf(res.getStatusCode()));
 //    	ResponseHandler responseHandler = new ResponseHandler(res);
 //    	String orderId = res.jsonPath().get("id");
 //    	testContext.setorderId(orderId);
@@ -99,8 +124,8 @@ public class ApiSteps {
     	
     }
         
-    @And("I attempt to approve the order based on test case true")
-    public void approve() throws InterruptedException {
+    @Then("TPP redirect PSU to login on paypal  to approve the order with {string} and {string}")
+    public void approve(String user_email , String user_password) throws InterruptedException {
         WebDriver driver = DriverFactory.getDriver();
         
         String url = testContext.getredirectUrl();
@@ -119,18 +144,30 @@ public class ApiSteps {
         Thread.sleep(70);
         loginpage.loginWithPassword(System.getProperty("paypal.user.password"));
         Thread.sleep(700);
-        AccountsPage accountsPage = new AccountsPage(driver);
         
-        //accountsPage.waitForAccountsPage();
-        accountsPage.selectAccountByName("Visa");
-        accountsPage.clickCompletePurchase();
-        //accountsPage.selectAccountByName("CREDIT UNION 1 (AK)");
-        Thread.sleep(7000);
 
     }
     
-    @Then("I authorize order after user approval")
-    public void authorizeOrder() throws NoSuchAlgorithmException, InvalidKeySpecException {
+    
+    @And("PSU select account {string} on accounts page and submit the payment")
+    public void selectAccountandSubmit(String payer_account) {
+    	WebDriver driver = DriverFactory.getDriver();
+       AccountsPage accountsPage = new AccountsPage(driver);
+        
+        //accountsPage.waitForAccountsPage();
+        accountsPage.selectAccountByName(payer_account);
+        accountsPage.clickCompletePurchase();
+        //accountsPage.selectAccountByName("CREDIT UNION 1 (AK)");
+        
+    }
+
+    
+    
+    
+    
+    
+    @Then("TPP authorize order after user approval through paypal with payload {string} and response code should be {string}")
+    public void authorizeOrder(String authpayload  , String authorizatioresCode) throws NoSuchAlgorithmException, InvalidKeySpecException {
     	String body = "";
 
     	
@@ -142,7 +179,12 @@ public class ApiSteps {
     	Headers.put("Content-Type", "application/json");
     	System.out.println(token);
     	
-    	resrtHelper.postMessage(body,Headers,fullUrl);
+    	restHelper.postMessage(body,Headers);
+    	
+    	Response res = restHelper.postMessageAuth(body,Headers,fullUrl);
+    	testContext.setauthorizeOrderResponse(res);
+    
+    	assertEquals(authorizatioresCode,String.valueOf(res.getStatusCode()));
 //    	ResponseHandler responseHandler = new ResponseHandler(res);
 //    	String orderId = res.jsonPath().get("id");
 //    	testContext.setorderId(orderId);
@@ -150,6 +192,15 @@ public class ApiSteps {
 //    	testContext.setredirectUrl(responseHandler.getRedirectUrlByRel(rel));
 //    	System.out.println(responseHandler.getRedirectUrlByRel(rel));
     	
+    }
+    
+    @And("the order status should be {string}")
+    public void checkOrderStatusafterAuth(String orderStatus) {
+         Response res = testContext.getAuthorizeOrderResponse();
+         String status = res.jsonPath().getString("status");
+     	assertEquals(orderStatus,status);
+
+         
     }
     
     }
