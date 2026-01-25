@@ -1,6 +1,7 @@
 package com.paypal.base;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,6 +61,24 @@ public class BrowserBasePage {
                  }
              });
          }
+         
+         public void safeClickSubmitButton(WebElement element) {
+        	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
+        	    By spinner = By.cssSelector("div[data-testid='exit-loader-spinner'], div[class*='SpinnerOverlay']");
+                
+        	    wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
+        	    wait.until(ExpectedConditions.elementToBeClickable(element));
+                System.out.println("Dsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssone");
+                JavascriptExecutor js = (JavascriptExecutor)driver;
+                //element.click();
+                js.executeScript("arguments[0].click();",
+                element);
+
+        	    // AFTER click (THIS IS WHAT YOU WERE MISSING)
+        	    wait.until(ExpectedConditions.invisibilityOfElementLocated(spinner));
+        	}
+
 
          /** Safe sendKeys */
          public void safeSendKeys(WebElement element, String text) {

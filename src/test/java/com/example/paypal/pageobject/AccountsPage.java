@@ -33,6 +33,7 @@ public class AccountsPage extends BrowserBasePage {
         safeClick(radioBtn);
         System.out.println("Clicking");
     }
+    
 
     /**
      * Validate account is visible
@@ -62,7 +63,7 @@ public class AccountsPage extends BrowserBasePage {
 
     public void clickCompletePurchase() {
         WebElement btn = waitForPresence(AccountsPageOR.completePurchaseBtn);
-        safeClick(btn);
+        safeClickSubmitButton(btn);
     }
 
     public void cancelAndReturn() {

@@ -12,6 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <commons-io.version>2.16.1</commons-io.version>
 
         <cucumber.version>7.20.0</cucumber.version>
         <allure.version>2.29.0</allure.version>
@@ -23,6 +24,17 @@
         <junit.jupiter.version>5.11.0</junit.jupiter.version>
         <logback.version>1.5.6</logback.version> <!-- newer stable -->
     </properties>
+
+    <!-- DEPENDENCY MANAGEMENT - Force consistent versions -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -47,11 +59,13 @@
             <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- JWT Token Generation -->
         <dependency>
-    <groupId>io.jsonwebtoken</groupId>
-    <artifactId>jjwt-api</artifactId>
-    <version>0.12.3</version>
-</dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>0.12.3</version>
+        </dependency>
 
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
@@ -83,10 +97,12 @@
             <version>${selenium.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- WebDriverManager - temporary workaround for SeleniumManager timeout -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
+            <version>5.9.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -96,6 +112,30 @@
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Explicit POI base with commons-io exclusion -->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${poi.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <!-- JUnit 5 -->
@@ -112,7 +152,15 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Logging (needed by Allure & Cucumber) -->
+        <!-- Logging (SLF4J API) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging (Logback implementation for SLF4J) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
@@ -120,6 +168,34 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Extent Reports for Enterprise Reporting -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.1.1</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Commons IO - MUST be declared LAST to ensure newer version loads first -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <version>4.5.9</version>
+      </dependency>
     </dependencies>
 
     <build>
@@ -143,7 +219,7 @@
                 <version>3.5.0</version>
                 <configuration>
                     <parallel>methods</parallel>
-                    <threadCount>4</threadCount>
+                    <threadCount>2</threadCount>
                     <perCoreThreadCount>true</perCoreThreadCount>
                     <useUnlimitedThreads>false</useUnlimitedThreads>
                     <includes>
