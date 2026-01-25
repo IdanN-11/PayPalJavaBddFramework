@@ -2,9 +2,6 @@ pipeline {
     agent any
 
     environment {
-        
-
-        // Selenium Grid URL (from docker-compose)
         SELENIUM_GRID_URL = "http://localhost:4444/wd/hub"
     }
 
@@ -13,8 +10,6 @@ pipeline {
     }
 
     stages {
-
-        
 
         stage('Checkout Code') {
             steps {
@@ -31,7 +26,7 @@ pipeline {
             }
         }
 
-        stage('Build Test Image') {
+        stage('Build Images') {
             steps {
                 bat '''
                   docker compose build
@@ -39,15 +34,13 @@ pipeline {
             }
         }
 
-        stage('Start Selenium Grid') {
+        stage('Run Tests (Docker)') {
             steps {
                 bat '''
-                  docker compose up -d selenium-hub chrome edge1 edge2 edge3 test-runner
+                  docker compose up --abort-on-container-exit --exit-code-from test-runner
                 '''
             }
         }
-
-        
     }
 
     post {
@@ -55,7 +48,7 @@ pipeline {
             echo "📦 Archiving reports"
             archiveArtifacts artifacts: 'target/**/*.*', allowEmptyArchive: true
 
-            echo "🧹 Stopping containers"
+            echo "🧹 Cleaning containers"
             bat 'docker compose down -v || echo cleanup done'
         }
 
