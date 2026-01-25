@@ -42,18 +42,12 @@ pipeline {
         stage('Start Selenium Grid') {
             steps {
                 bat '''
-                  docker compose up -d selenium-hub chrome edge1 edge2 edge3
+                  docker compose up -d selenium-hub chrome edge1 edge2 edge3 test-runner
                 '''
             }
         }
 
-        stage('Run Tests') {
-            steps {
-                bat '''
-                  mvn test -Dselenium.grid.url=%SELENIUM_GRID_URL%
-                '''
-            }
-        }
+        
     }
 
     post {
