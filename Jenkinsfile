@@ -1,12 +1,36 @@
 pipeline {
     agent any
 
-    tools {
-        jdk 'jdk-17'
-        maven 'maven-3.9'
+    environment {
+        // Jenkins Global Tools names
+        JAVA_HOME  = tool 'jdk-17'
+        MAVEN_HOME = tool 'maven-3.9'
+
+        // Fix PATH for Windows
+        PATH = "${JAVA_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}"
+
+        // Selenium Grid URL (from docker-compose)
+        SELENIUM_GRID_URL = "http://localhost:4444/wd/hub"
+    }
+
+    options {
+        timestamps()
     }
 
     stages {
+
+        stage('Verify Tools') {
+            steps {
+                bat '''
+                  echo ===== JAVA =====
+                  java -version
+                  echo ===== MAVEN =====
+                  mvn.cmd -version
+                  echo ===== DOCKER =====
+                  docker --version
+                '''
+            }
+        }
 
         stage('Checkout Code') {
             steps {
@@ -15,40 +39,54 @@ pipeline {
             }
         }
 
-        stage('Clean Workspace') {
+        stage('Clean Old Containers') {
             steps {
-                bat 'mvn clean'
+                bat '''
+                  docker compose down -v || echo No containers running
+                '''
+            }
+        }
+
+        stage('Build Test Image') {
+            steps {
+                bat '''
+                  docker compose build
+                '''
             }
         }
 
         stage('Start Selenium Grid') {
             steps {
-                bat 'docker-compose up -d'
+                bat '''
+                  docker compose up -d selenium-hub chrome edge1 edge2 edge3
+                '''
             }
         }
 
         stage('Run Tests') {
             steps {
-                bat 'mvn test'
+                bat '''
+                  mvn.cmd test -Dselenium.grid.url=%SELENIUM_GRID_URL%
+                '''
             }
         }
     }
 
     post {
         always {
-            echo '📦 Collecting reports...'
-            archiveArtifacts artifacts: 'target/**', allowEmptyArchive: true
+            echo "📦 Archiving reports"
+            archiveArtifacts artifacts: 'target/**/*.*', allowEmptyArchive: true
 
-            echo '🧹 Cleaning Docker containers'
-            bat 'docker-compose down'
-        }
-
-        failure {
-            echo '❌ Tests failed'
+            echo "🧹 Stopping containers"
+            bat 'docker compose down -v || echo cleanup done'
         }
 
         success {
-            echo '✅ Tests passed'
+            echo "✅ Tests PASSED"
+        }
+
+        failure {
+            echo "❌ Tests FAILED"
         }
     }
 }
