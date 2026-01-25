@@ -2,12 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // Jenkins Global Tools names
-        JAVA_HOME  = tool 'jdk-17'
-        MAVEN_HOME = tool 'maven-3.9'
-
-        // Fix PATH for Windows
-        PATH = "${JAVA_HOME}\\bin;${MAVEN_HOME}\\bin;${env.PATH}"
+        
 
         // Selenium Grid URL (from docker-compose)
         SELENIUM_GRID_URL = "http://localhost:4444/wd/hub"
@@ -19,18 +14,7 @@ pipeline {
 
     stages {
 
-        stage('Verify Tools') {
-            steps {
-                bat '''
-                  echo ===== JAVA =====
-                  java -version
-                  echo ===== MAVEN =====
-                  mvn.cmd -version
-                  echo ===== DOCKER =====
-                  docker --version
-                '''
-            }
-        }
+        
 
         stage('Checkout Code') {
             steps {
@@ -66,7 +50,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 bat '''
-                  mvn.cmd test -Dselenium.grid.url=%SELENIUM_GRID_URL%
+                  mvn test -Dselenium.grid.url=%SELENIUM_GRID_URL%
                 '''
             }
         }
